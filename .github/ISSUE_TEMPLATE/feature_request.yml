@@ -1,0 +1,16 @@
+name: Feature Request
+description: Suggest a feature
+title: "[Feat]: "
+labels: ["⭐ goal: addition"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for suggest an idea for this project!
+  - type: textarea
+    id: feature-request
+    attributes:
+      label: Feature request
+      description: Tell us what you want do have.
+    validations:
+      required: true
