@@ -1,0 +1,165 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title></title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>LinkFree Profile Generator</h1>
+        <div class="input-group mb-3">
+            <span class="input-group-text">@</span>
+            <input id="username" type="text" class="form-control" placeholder="GitHub username" aria-label="Username"
+                aria-describedby="username">
+        </div>
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="">First and last name</span>
+            </div>
+            <input type="text" id="firstname" class="form-control" placeholder="Max">
+            <input type="text" id="lastname" class="form-control" placeholder="Mustermann">
+        </div>
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="type">Type</label>
+            </div>
+            <select class="custom-select" id="type">
+                <option value="personal" selected>Personal</option>
+                <option value="community">Community</option>
+            </select>
+        </div>
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Bio</span>
+            </div>
+            <textarea class="form-control" id="bio" aria-label="Bio"></textarea>
+        </div>
+
+        <h2>Links</h2>
+        <div class="card">
+            
+            <table id="myTable" class=" table order-list">
+                <thead>
+                    <tr>
+                        <td>Name</td>
+                        <td>URL</td>
+                        <td>Icon</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="col-sm-4">
+                            <input type="text" name="name" class="form-control" value="test1" />
+                        </td>
+                        <td class="col-sm-4">
+                            <input type="text" name="url" class="form-control" value="test2"/>
+                        </td>
+                        <td class="col-sm-3">
+                            <input type="text" name="icon" class="form-control" />
+                        </td>
+                        <td class="col-sm-2"><a class="deleteRow"></a>
+    
+                        </td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td>
+                            <input type="button" class="btn btn-lg btn-block " id="addrow" value="Add Row" />
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
+        
+
+
+
+
+        <br>
+        <button type="button" onclick="generateJson()" class="btn btn-primary">Generate JSON</button>
+
+
+        <div id="json-output"></div>
+
+
+
+
+        
+    </div>
+
+
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+    <script src="js/scripts.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            var counter = 0;
+
+            $("#addrow").on("click", function () {
+                var newRow = $("<tr>");
+                var cols = "";
+
+                cols += '<td><input type="text" class="form-control" name="name' + counter + '"/></td>';
+                cols += '<td><input type="text" class="form-control" name="mail' + counter + '"/></td>';
+                cols += '<td><input type="text" class="form-control" name="phone' + counter + '"/></td>';
+
+                cols += '<td><input type="button" class="ibtnDel btn btn-md btn-danger "  value="Delete"></td>';
+                newRow.append(cols);
+                $("table.order-list").append(newRow);
+                counter++;
+            });
+
+
+
+            $("table.order-list").on("click", ".ibtnDel", function (event) {
+                $(this).closest("tr").remove();
+                counter -= 1
+            });
+
+
+        });
+
+
+
+        function calculateRow(row) {
+            var price = +row.find('input[name^="price"]').val();
+
+        }
+
+        function calculateGrandTotal() {
+            var grandTotal = 0;
+            $("table.order-list").find('input[name^="price"]').each(function () {
+                grandTotal += +$(this).val();
+            });
+            $("#grandtotal").text(grandTotal.toFixed(2));
+        }
+    </script>
+
+
+</body>
+
+</html>
