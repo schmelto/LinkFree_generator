@@ -105,7 +105,6 @@
                         <tr>
                             <td>Title</td>
                             <td>Date</td>
-                            <td>Icon</td>
                             <td>Color</td>
                             <td>Desctiption</td>
                             <td>URL</td>
@@ -133,12 +132,6 @@
             var counter = 0;
 
             $("#addrow").on("click", function () {
-                var newRow = $("<tr>");
-                var cols = "";
-
-                cols += '<td><input type="text" class="form-control" name="name' + counter + '" placeholder="name"/></td>';
-                cols += '<td><input type="text" class="form-control" name="url' + counter + '" placeholder="url"/></td>';
-                cols += '<td><input type="text" class="form-control" name="icon' + counter + '" placeholder="icon"/></td>';
 
                 cols += '<td><buntton class="btn btn-sm btn-danger ibtnDel">Delete</buntton></td>';
                 newRow.append(cols);
