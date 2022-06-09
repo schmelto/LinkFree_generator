@@ -47,8 +47,17 @@ function generateJson() {
         "type": type,
         "bio": bio,
         "avatar": avatar,
-        "links": links,
-        "milestones": milestones
+        
+    }
+
+    if (links.length > 0) {
+        // append links : links to the json object
+        json["links"] = links;
+    }
+
+    if (milestones.length > 0) {
+        // append milestones : milestones to the json object
+        json["milestones"] = milestones;
     }
 
     document.getElementById("json-output").innerHTML = syntaxHighlight(JSON.stringify(json, undefined, 4));
