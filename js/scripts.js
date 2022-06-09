@@ -29,11 +29,14 @@
 
 
 let links = [];
+let milestones = [];
 
 
 function generateJson() {
     links = [];
+    milestones = [];
     getLinks();
+    getMilestones();
     var username = document.getElementById("username").value;
     let name = document.getElementById("firstname").value + ` ` + document.getElementById("lastname").value;
     let type = document.getElementById("type").value;
@@ -45,6 +48,7 @@ function generateJson() {
         "bio": bio,
         "avatar": avatar,
         "links": links,
+        "milestones": milestones
     }
 
     document.getElementById("json-output").innerHTML = syntaxHighlight(JSON.stringify(json, undefined, 4));
@@ -79,6 +83,50 @@ function getLinks() {
 
         // push the link object into the links array
         links.push(link);
+    }
+
+}
+
+function getMilestones() {
+    var myTable = document.getElementById("milestones");
+
+    // get only the rows tbody
+    var tbody = myTable.getElementsByTagName("tbody")[0];
+
+
+    // get the number of rows in the tbody
+    var tbodyRowCount = tbody.rows.length;
+
+    // loop through the rows
+    for (var i = 0; i < tbodyRowCount; i++) {
+
+
+        // "title": "Started Freelancing",
+//         "date": "December 2021",
+//         "icon": "dollar",
+//         "color": "grey",
+//         "description": "Started freelancing",
+//         "url": "https://www.eddiejaoude.io/"
+        // get the values in the input fields
+        var title = tbody.rows[i].cells[0].getElementsByTagName("input")[0].value;
+        var date = tbody.rows[i].cells[1].getElementsByTagName("input")[0].value;
+        var icon = tbody.rows[i].cells[2].getElementsByTagName("input")[0].value;
+        var color = tbody.rows[i].cells[3].getElementsByTagName("input")[0].value;
+        var description = tbody.rows[i].cells[4].getElementsByTagName("input")[0].value;
+        var url = tbody.rows[i].cells[5].getElementsByTagName("input")[0].value;
+
+        // create a milestone object
+        var milestone = {
+            "title": title,
+            "date": date,
+            "icon": icon,
+            "color": color,
+            "description": description,
+            "url": url
+        }
+
+        // push the milestone object into the milestones array
+        milestones.push(milestone);
     }
 
 }
