@@ -83,19 +83,6 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td class="col-sm-4">
-                                <input type="text" name="name" class="form-control" placeholder="Follow me on GitHub" />
-                            </td>
-                            <td class="col-sm-4">
-                                <input type="text" name="url" class="form-control"
-                                    placeholder="https://www.github.com/username" />
-                            </td>
-                            <td class="col-sm-3">
-                                <input type="text" name="icon" class="form-control" placeholder="github" />
-                            </td>
-
-                        </tr>
                     </tbody>
                 </table>
                 <div class="d-grid">
@@ -125,28 +112,6 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td class="col">
-                                <input type="text" name="title" class="form-control"
-                                    placeholder="Follow me on GitHub" />
-                            </td>
-                            <td class="col">
-                                <input type="date" name="date" class="form-control" placeholder="" />
-                            </td>
-                            <td class="col">
-                                <input type="text" name="icon" class="form-control" placeholder="icon" />
-                            </td>
-                            <td class="col">
-                                <input type="text" name="color" class="form-control" placeholder="grey" />
-                            </td>
-                            <td class="col">
-                                <input type="text" name="desctiption" class="form-control" placeholder="description" />
-                            </td>
-                            <td class="col">
-                                <input type="text" name="url" class="form-control"
-                                    placeholder="https://www.github.com/username" />
-                            </td>
-                        </tr>
                     </tbody>
                 </table>
                 <div class="d-grid">
@@ -171,9 +136,9 @@
                 var newRow = $("<tr>");
                 var cols = "";
 
-                cols += '<td><input type="text" class="form-control" name="name' + counter + '"/></td>';
-                cols += '<td><input type="text" class="form-control" name="url' + counter + '"/></td>';
-                cols += '<td><input type="text" class="form-control" name="icon' + counter + '"/></td>';
+                cols += '<td><input type="text" class="form-control" name="name' + counter + '" placeholder="name"/></td>';
+                cols += '<td><input type="text" class="form-control" name="url' + counter + '" placeholder="url"/></td>';
+                cols += '<td><input type="text" class="form-control" name="icon' + counter + '" placeholder="icon"/></td>';
 
                 cols += '<td><buntton class="btn btn-sm btn-danger ibtnDel">Delete</buntton></td>';
                 newRow.append(cols);
@@ -186,7 +151,7 @@
                 var cols = "";
 
                 cols += `<td class="col">
-                                <input type="text" name="title" class="form-control" placeholder="Follow me on GitHub" />
+                                <input type="text" name="title" class="form-control" placeholder="Title" />
                             </td>
                             <td class="col">
                                 <input type="date" name="date" class="form-control" placeholder="" />
