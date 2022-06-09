@@ -1,4 +1,4 @@
-name: Releases
+name: Release
 on:
   push:
     branches:
@@ -11,14 +11,14 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: conventional Changelog Action
+      - name: Conventional Changelog Action
         id: changelog
-        uses: TriPSs/conventional-changelog-action@v3.7.1
+        uses: TriPSs/conventional-changelog-action@v3
         with:
-          github-token: ${{ secrets.github_token
-          version-file: './package.json,./package-lock.json'
+          github-token: ${{ secrets.github_token }}
+          output-file: 'false'
 
-      - name: create release
+      - name: Create Release
         uses: actions/create-release@v1
         if: ${{ steps.changelog.outputs.skipped == 'false' }}
         env:
