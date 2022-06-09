@@ -102,11 +102,11 @@ function getMilestones() {
 
 
         // "title": "Started Freelancing",
-//         "date": "December 2021",
-//         "icon": "dollar",
-//         "color": "grey",
-//         "description": "Started freelancing",
-//         "url": "https://www.eddiejaoude.io/"
+        //         "date": "December 2021",
+        //         "icon": "dollar",
+        //         "color": "grey",
+        //         "description": "Started freelancing",
+        //         "url": "https://www.eddiejaoude.io/"
         // get the values in the input fields
         var title = tbody.rows[i].cells[0].getElementsByTagName("input")[0].value;
         var date = tbody.rows[i].cells[1].getElementsByTagName("input")[0].value;
