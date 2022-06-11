@@ -163,59 +163,59 @@
             $("#addrow").on("click", function () {
                 var newRow = $("<tr>");
                 var cols = `
-                <td>
-                    <input type="text" class="form-control" placeholder="Text Link" name="name${counter}" required/>
-                    <div class="valid-feedback">Looks good!</div>
-                    <div class="invalid-feedback">Please fill text link!</div>
-                </td>
-                <td>
-                    <input type="text" class="form-control" placeholder="Link URL" name="url${counter}" required/>
-                    <div class="valid-feedback">Looks good!</div>
-                    <div class="invalid-feedback">Please fill link url!</div>
-                </td>
-                <td>
-                    <select class="form-select" name="icon${counter}" aria-label="Select Icon" required>
-                        <option value="" selected>-- Select Icon --</option>
-                        <option value="Android">Android</option>
-                        <option value="Apple">Apple</option>
-                        <option value="Book">Book</option>
-                        <option value="Codeforces">Codeforces</option>
-                        <option value="Codewars">Codewars</option>
-                        <option value="DEV.to">DEV.to</option>
-                        <option value="Discord">Discord</option>
-                        <option value="Dollar">Dollar</option>
-                        <option value="Envelope">Envelope</option>
-                        <option value="Facebook">Facebook</option>
-                        <option value="GitHub">GitHub</option>
-                        <option value="GitLab">GitLab</option>
-                        <option value="Globe">Globe</option>
-                        <option value="Graduation Hat">Graduation Hat</option>
-                        <option value="Hashnode">Hashnode</option>
-                        <option value="Instagram">Instagram</option>
-                        <option value="Laravel">Laravel</option>
-                        <option value="Left Arrow">Left Arrow</option>
-                        <option value="Link">Link</option>
-                        <option value="Linkedin">Linkedin</option>
-                        <option value="Medium">Medium</option>
-                        <option value="Microsoft">Microsoft</option>
-                        <option value="NodeJs">NodeJs</option>
-                        <option value="PayPal">PayPal</option>
-                        <option value="Polywork">Polywork</option>
-                        <option value="Search">Search</option>
-                        <option value="Send">Send</option>
-                        <option value="Slack">Slack</option>
-                        <option value="Snapchat">Snapchat</option>
-                        <option value="Telegram">Telegram</option>
-                        <option value="TikTok">TikTok</option>
-                        <option value="Twitch">Twitch</option>
-                        <option value="Twitter">Twitter</option>
-                        <option value="Vimeo">Vimeo</option>
-                        <option value="YouTube">YouTube</option>
-                    </select>
-                    <div class="valid-feedback">Looks good!</div>
-                    <div class="invalid-feedback">Please select icon name!</div>
-                </td>
-                <td><buntton class="btn btn-sm btn-danger ibtnDel">Delete</buntton></td>
+                    <td>
+                        <input type="text" class="form-control" placeholder="Text Link" name="name${counter}" required/>
+                        <div class="valid-feedback">Looks good!</div>
+                        <div class="invalid-feedback">Please fill text link!</div>
+                    </td>
+                    <td>
+                        <input type="text" class="form-control" placeholder="Link URL" name="url${counter}" required/>
+                        <div class="valid-feedback">Looks good!</div>
+                        <div class="invalid-feedback">Please fill link url!</div>
+                    </td>
+                    <td>
+                        <select class="form-select" name="icon${counter}" aria-label="Select Icon" required>
+                            <option value="" selected>-- Select Icon --</option>
+                            <option value="Android">Android</option>
+                            <option value="Apple">Apple</option>
+                            <option value="Book">Book</option>
+                            <option value="Codeforces">Codeforces</option>
+                            <option value="Codewars">Codewars</option>
+                            <option value="DEV.to">DEV.to</option>
+                            <option value="Discord">Discord</option>
+                            <option value="Dollar">Dollar</option>
+                            <option value="Envelope">Envelope</option>
+                            <option value="Facebook">Facebook</option>
+                            <option value="GitHub">GitHub</option>
+                            <option value="GitLab">GitLab</option>
+                            <option value="Globe">Globe</option>
+                            <option value="Graduation Hat">Graduation Hat</option>
+                            <option value="Hashnode">Hashnode</option>
+                            <option value="Instagram">Instagram</option>
+                            <option value="Laravel">Laravel</option>
+                            <option value="Left Arrow">Left Arrow</option>
+                            <option value="Link">Link</option>
+                            <option value="Linkedin">Linkedin</option>
+                            <option value="Medium">Medium</option>
+                            <option value="Microsoft">Microsoft</option>
+                            <option value="NodeJs">NodeJs</option>
+                            <option value="PayPal">PayPal</option>
+                            <option value="Polywork">Polywork</option>
+                            <option value="Search">Search</option>
+                            <option value="Send">Send</option>
+                            <option value="Slack">Slack</option>
+                            <option value="Snapchat">Snapchat</option>
+                            <option value="Telegram">Telegram</option>
+                            <option value="TikTok">TikTok</option>
+                            <option value="Twitch">Twitch</option>
+                            <option value="Twitter">Twitter</option>
+                            <option value="Vimeo">Vimeo</option>
+                            <option value="YouTube">YouTube</option>
+                        </select>
+                        <div class="valid-feedback">Looks good!</div>
+                        <div class="invalid-feedback">Please select icon name!</div>
+                    </td>
+                    <td><buntton class="btn btn-sm btn-danger ibtnDel">Delete</buntton></td>
                 `;
                 newRow.append(cols);
                 $("table.order-list").append(newRow);
