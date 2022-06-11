@@ -132,8 +132,19 @@
             var counter = 0;
 
             $("#addrow").on("click", function () {
-
-                cols += '<td><buntton class="btn btn-sm btn-danger ibtnDel">Delete</buntton></td>';
+                var newRow = $("<tr>");
+                var cols = `
+                <td>
+                    <input type="text" class="form-control" placeholder="Text Link" name="name${counter}" required/>
+                </td>
+                <td>
+                    <input type="text" class="form-control" placeholder="Link URL" name="url${counter}" required/>
+                </td>
+                <td>
+                    <input type="text" name="icon" class="form-control" placeholder="icon${counter}" />
+                </td>
+                <td><buntton class="btn btn-sm btn-danger ibtnDel">Delete</buntton></td>
+                `;
                 newRow.append(cols);
                 $("table.order-list").append(newRow);
                 counter++;
