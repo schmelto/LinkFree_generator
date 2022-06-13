@@ -81,7 +81,7 @@ function getLinks() {
         // get the values in the input fields
         var name = tbody.rows[i].cells[0].getElementsByTagName("input")[0].value;
         var url = tbody.rows[i].cells[1].getElementsByTagName("input")[0].value;
-        var icon = tbody.rows[i].cells[2].getElementsByTagName("input")[0].value;
+        var icon = tbody.rows[i].cells[2].getElementsByTagName("select")[0].value;
 
         // create a link object
         var link = {
@@ -119,7 +119,7 @@ function getMilestones() {
         // get the values in the input fields
         var title = tbody.rows[i].cells[0].getElementsByTagName("input")[0].value;
         var date = tbody.rows[i].cells[1].getElementsByTagName("input")[0].value;
-        var icon = tbody.rows[i].cells[2].getElementsByTagName("input")[0].value;
+        var icon = tbody.rows[i].cells[2].getElementsByTagName("select")[0].value;
         var color = tbody.rows[i].cells[3].getElementsByTagName("input")[0].value;
         var description = tbody.rows[i].cells[4].getElementsByTagName("input")[0].value;
         var url = tbody.rows[i].cells[5].getElementsByTagName("input")[0].value;
