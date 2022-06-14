@@ -60,6 +60,7 @@ function generateJson() {
         json["milestones"] = milestones;
     }
 
+    document.getElementById("json-container").classList.remove('d-none');
     document.getElementById("json-output").innerHTML = syntaxHighlight(JSON.stringify(json, undefined, 4));
 }
 
@@ -158,3 +159,30 @@ function syntaxHighlight(json) {
         return '<span class="' + cls + '">' + match + '</span>';
     });
 }
+
+function CopyToClipboard(containerid) {
+    if (document.selection) {
+        var range = document.body.createTextRange();
+        range.moveToElementText(document.getElementById(containerid));
+        range.select().createTextRange();
+        document.execCommand("copy");
+    } else if (window.getSelection) {
+        var range = document.createRange();
+        range.selectNode(document.getElementById(containerid));
+        window.getSelection().addRange(range);
+        document.execCommand("copy");
+        document.getElementById('text-helper-clipboard').innerHTML = 'JSON has been copied!';
+    }
+}
+
+
+async function appVersion() {
+    const response = await fetch('https://api.github.com/repos/schmelto/LinkFree_generator/releases/latest', {
+        method: 'GET',
+        mode: 'cors'
+    })
+    const data = await response.json()
+    document.getElementById('app-version').innerHTML = data.name
+}
+
+appVersion()
