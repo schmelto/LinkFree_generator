@@ -36,94 +36,130 @@
         .key {
             color: red;
         }
+
+        #json-container {
+            position: relative;
+        }
+
+        #json-container #copyToClipboard {
+            position: absolute;
+            right: 8px;
+            top: 8px;
+        }
+
+        .ibtnDel{
+            padding:6px 10px !important;
+            font-size:16px !important;
+        }
     </style>
 </head>
 
 <body>
 
-    <div class="container py-5 w-50 mx-auto">
-
-        <h1 class="text-center">LinkFree Profile Generator</h1>
+    <main class="container py-5 w-75 mx-auto">
+        <div class="text-center">
+            <h1>LinkFree Profile Generator</h1>
+            <small id="app-version" class="badge text-bg-success">app-version</small>
+        </div>
         <hr>
-        <div class="input-group mb-3">
-            <span class="input-group-text">@</span>
-            <input id="username" type="text" class="form-control" placeholder="GitHub username" aria-label="Username"
-                aria-describedby="username">
-        </div>
+        <form method="post" id="form-generator" class="needs-validation" novalidate>
+            <div class="input-group mb-3">
+                <span class="input-group-text">@</span>
+                <input id="username" type="text" class="form-control" placeholder="GitHub username"
+                    aria-label="Username" aria-describedby="username" required>
+                <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">Please fill your Github Username!</div>
+            </div>
 
-        <div class="input-group mb-3">
-            <span class="input-group-text" id="">First and Last Name</span>
-            <input type="text" id="firstname" class="form-control" placeholder="Max">
-            <input type="text" id="lastname" class="form-control" placeholder="Mustermann">
-        </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="">First and Last Name</span>
+                <input type="text" id="firstname" class="form-control" placeholder="Max" required>
+                <input type="text" id="lastname" class="form-control" placeholder="Mustermann" required>
+                <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">Please fill your Firstname and Lastname!</div>
+            </div>
 
-        <div class="input-group mb-3">
-            <label class="input-group-text" for="type">Profile Type</label>
-            <select class="form-select" id="type">
-                <option value="personal" selected>Personal</option>
-                <option value="community">Community</option>
-            </select>
-        </div>
+            <div class="input-group mb-3">
+                <label class="input-group-text" for="type">Profile Type</label>
+                <select class="form-select" id="type" required>
+                    <option value="personal" selected>Personal</option>
+                    <option value="community">Community</option>
+                </select>
+                <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">Please select type of profile!</div>
+            </div>
 
-        <div class="input-group mb-3">
-            <span class="input-group-text">Bio</span>
-            <textarea class="form-control" id="bio" aria-label="Bio" placeholder="I am Street Programmer"></textarea>
-        </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text">Bio</span>
+                <textarea class="form-control" id="bio" aria-label="Bio" placeholder="I am Street Programmer"
+                    required></textarea>
+                <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">Please fill your short bio!</div>
+            </div>
 
-        <h3>Links</h3>
-        <div class="card">
-            <div class="card-body">
-                <table id="myTable" class="table order-list">
-                    <thead>
-                        <tr>
-                            <td>Name</td>
-                            <td>URL</td>
-                            <td>Icon</td>
-                            <td>&nbsp;</td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    </tbody>
-                </table>
-                <div class="d-grid">
-                    <button type="button" class="btn btn-primary" id="addrow">Add Row</button>
+            <h3>Links</h3>
+            <div class="card">
+                <div class="card-body">
+                    <table id="myTable" class="table order-list">
+                        <thead>
+                            <tr>
+                                <td>Name</td>
+                                <td>URL</td>
+                                <td>Icon</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                    <div class="d-grid">
+                        <button type="button" class="btn btn-primary" id="addrow">Add Row</button>
+                    </div>
                 </div>
             </div>
-        </div>
-        <br>
-        <h3>Milestones</h3>
-        <!-- "title": "Started Freelancing",
-//         "date": "December 2021",
-//         "icon": "dollar",
-//         "color": "grey",
-//         "description": "Started freelancing",
-//         "url": "https://www.eddiejaoude.io/" -->
-        <div class="card">
-            <div class="card-body">
-                <table id="milestones" class="table order-list2">
-                    <thead>
-                        <tr>
-                            <td>Title</td>
-                            <td>Date</td>
-                            <td>Color</td>
-                            <td>Desctiption</td>
-                            <td>URL</td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    </tbody>
-                </table>
-                <div class="d-grid">
-                    <button type="button" class="btn btn-primary" id="addrowmilestone">Add Row</button>
+            </div>
+            <br>
+            <h3>Milestones</h3>
+            <div class="card">
+                <div class="card-body">
+                    <table id="milestones" class="table order-list2">
+                        <thead>
+                            <tr>
+                                <td>Title</td>
+                                <td>Date</td>
+                                <td>Icon</td>
+                                <td>Color</td>
+                                <td>Description</td>
+                                <td>URL</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                    <div class="d-grid">
+                        <button type="button" class="btn btn-primary" id="addrowmilestone">Add Row</button>
+                    </div>
                 </div>
             </div>
+            <br>
+            <div class="d-grid">
+                <button type="submit" class="btn btn-dark">{ Generate JSON }</button>
+            </div>
+        </form>
+        <div id="json-container" class="d-none">
+            <button type="button" id="copyToClipboard" class="btn btn-light shadow-sm"
+                onclick="CopyToClipboard('json-output')">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-clipboard" viewBox="0 0 16 16">
+                    <path
+                        d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z" />
+                    <path
+                        d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z" />
+                </svg> &nbsp; <span id="text-helper-clipboard">Copy to Clipboard</span>
+            </button>
+            <pre id="json-output" class="mt-3"></pre>
         </div>
-        <br>
-        <div class="d-grid">
-            <button type="button" onclick="generateJson()" class="btn btn-dark">{ Generate JSON }</button>
-        </div>
-        <pre id="json-output" class="mt-3"></pre>
-    </div>
+    </main>
 
     <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="js/scripts.js"></script>
@@ -132,8 +168,56 @@
             var counter = 0;
 
             $("#addrow").on("click", function () {
-
-                cols += '<td><buntton class="btn btn-sm btn-danger ibtnDel">Delete</buntton></td>';
+                var newRow = $("<tr>");
+                var cols = `
+                <td>
+                    <input type="text" class="form-control" placeholder="name" name="name${counter}" required/>
+                </td>
+                <td>
+                    <input type="text" class="form-control" placeholder="url" name="url${counter}" required/>
+                </td>
+                <td>
+                    <select class="form-select" name="icon${counter}" aria-label="Select Icon" required>
+                        <option value="" selected>-- Select Icon --</option>
+                        <option value="Android">Android</option>
+                        <option value="Apple">Apple</option>
+                        <option value="Book">Book</option>
+                        <option value="Codeforces">Codeforces</option>
+                        <option value="Codewars">Codewars</option>
+                        <option value="DEV.to">DEV.to</option>
+                        <option value="Discord">Discord</option>
+                        <option value="Dollar">Dollar</option>
+                        <option value="Envelope">Envelope</option>
+                        <option value="Facebook">Facebook</option>
+                        <option value="GitHub">GitHub</option>
+                        <option value="GitLab">GitLab</option>
+                        <option value="Globe">Globe</option>
+                        <option value="Graduation Hat">Graduation Hat</option>
+                        <option value="Hashnode">Hashnode</option>
+                        <option value="Instagram">Instagram</option>
+                        <option value="Laravel">Laravel</option>
+                        <option value="Left Arrow">Left Arrow</option>
+                        <option value="Link">Link</option>
+                        <option value="Linkedin">Linkedin</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Microsoft">Microsoft</option>
+                        <option value="NodeJs">NodeJs</option>
+                        <option value="PayPal">PayPal</option>
+                        <option value="Polywork">Polywork</option>
+                        <option value="Search">Search</option>
+                        <option value="Send">Send</option>
+                        <option value="Slack">Slack</option>
+                        <option value="Snapchat">Snapchat</option>
+                        <option value="Telegram">Telegram</option>
+                        <option value="TikTok">TikTok</option>
+                        <option value="Twitch">Twitch</option>
+                        <option value="Twitter">Twitter</option>
+                        <option value="Vimeo">Vimeo</option>
+                        <option value="YouTube">YouTube</option>
+                    </select>
+                </td>
+                <td><button class="btn btn-sm btn-danger ibtnDel">Delete</button></td>
+                `;
                 newRow.append(cols);
                 $("table.order-list").append(newRow);
                 counter++;
@@ -142,7 +226,6 @@
             $("#addrowmilestone").on("click", function () {
                 var newRow = $("<tr>");
                 var cols = "";
-
                 cols += `<td class="col">
                                 <input type="text" name="title" class="form-control" placeholder="Title" />
                             </td>
@@ -150,19 +233,56 @@
                                 <input type="date" name="date" class="form-control" placeholder="" />
                             </td>
                             <td class="col">
-                                <input type="text" name="icon" class="form-control" placeholder="icon" />
+                                <select class="form-select" name="icon" aria-label="Select Icon" required>
+                                    <option value="" selected>-- Select Icon --</option>
+                                    <option value="Android">Android</option>
+                                    <option value="Apple">Apple</option>
+                                    <option value="Book">Book</option>
+                                    <option value="Codeforces">Codeforces</option>
+                                    <option value="Codewars">Codewars</option>
+                                    <option value="DEV.to">DEV.to</option>
+                                    <option value="Discord">Discord</option>
+                                    <option value="Dollar">Dollar</option>
+                                    <option value="Envelope">Envelope</option>
+                                    <option value="Facebook">Facebook</option>
+                                    <option value="GitHub">GitHub</option>
+                                    <option value="GitLab">GitLab</option>
+                                    <option value="Globe">Globe</option>
+                                    <option value="Graduation Hat">Graduation Hat</option>
+                                    <option value="Hashnode">Hashnode</option>
+                                    <option value="Instagram">Instagram</option>
+                                    <option value="Laravel">Laravel</option>
+                                    <option value="Left Arrow">Left Arrow</option>
+                                    <option value="Link">Link</option>
+                                    <option value="Linkedin">Linkedin</option>
+                                    <option value="Medium">Medium</option>
+                                    <option value="Microsoft">Microsoft</option>
+                                    <option value="NodeJs">NodeJs</option>
+                                    <option value="PayPal">PayPal</option>
+                                    <option value="Polywork">Polywork</option>
+                                    <option value="Search">Search</option>
+                                    <option value="Send">Send</option>
+                                    <option value="Slack">Slack</option>
+                                    <option value="Snapchat">Snapchat</option>
+                                    <option value="Telegram">Telegram</option>
+                                    <option value="TikTok">TikTok</option>
+                                    <option value="Twitch">Twitch</option>
+                                    <option value="Twitter">Twitter</option>
+                                    <option value="Vimeo">Vimeo</option>
+                                    <option value="YouTube">YouTube</option>
+                                </select>
                             </td>
                             <td class="col">
                                 <input type="text" name="color" class="form-control" placeholder="grey" />
                             </td>
                             <td class="col">
-                                <input type="text" name="desctiption" class="form-control" placeholder="description" />
+                                <input type="text" name="description" class="form-control" placeholder="description" />
                             </td>
                             <td class="col">
                                 <input type="text" name="url" class="form-control" placeholder="https://www.github.com/username" />
                             </td>`;
 
-                cols += '<td><buntton class="btn btn-sm btn-danger ibtnDel">Delete</buntton></td>';
+                cols += '<td><button class="btn btn-sm btn-danger ibtnDel">Delete</button></td>';
                 newRow.append(cols);
                 $("table.order-list2").append(newRow);
                 counter++;
@@ -177,6 +297,19 @@
                 $(this).closest("tr").remove();
                 counter -= 1
             });
+
+            $(document).on('submit', '#form-generator', function (e) {
+                e.preventDefault();
+                var form = $(this);
+                if (!form[0].checkValidity()) {
+                    e.preventDefault();
+                    e.stopPropagation()
+                } else {
+                    generateJson();
+                }
+                form.addClass('was-validated');
+                return false;
+            })
         });
     </script>
 </body>

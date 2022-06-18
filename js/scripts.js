@@ -47,7 +47,6 @@ function generateJson() {
         "type": type,
         "bio": bio,
         "avatar": avatar,
-        
     }
 
     if (links.length > 0) {
@@ -60,6 +59,7 @@ function generateJson() {
         json["milestones"] = milestones;
     }
 
+    document.getElementById("json-container").classList.remove('d-none');
     document.getElementById("json-output").innerHTML = syntaxHighlight(JSON.stringify(json, undefined, 4));
 }
 
@@ -81,7 +81,7 @@ function getLinks() {
         // get the values in the input fields
         var name = tbody.rows[i].cells[0].getElementsByTagName("input")[0].value;
         var url = tbody.rows[i].cells[1].getElementsByTagName("input")[0].value;
-        var icon = tbody.rows[i].cells[2].getElementsByTagName("input")[0].value;
+        var icon = tbody.rows[i].cells[2].getElementsByTagName("select")[0].value;
 
         // create a link object
         var link = {
@@ -119,7 +119,7 @@ function getMilestones() {
         // get the values in the input fields
         var title = tbody.rows[i].cells[0].getElementsByTagName("input")[0].value;
         var date = tbody.rows[i].cells[1].getElementsByTagName("input")[0].value;
-        var icon = tbody.rows[i].cells[2].getElementsByTagName("input")[0].value;
+        var icon = tbody.rows[i].cells[2].getElementsByTagName("select")[0].value;
         var color = tbody.rows[i].cells[3].getElementsByTagName("input")[0].value;
         var description = tbody.rows[i].cells[4].getElementsByTagName("input")[0].value;
         var url = tbody.rows[i].cells[5].getElementsByTagName("input")[0].value;
@@ -158,3 +158,30 @@ function syntaxHighlight(json) {
         return '<span class="' + cls + '">' + match + '</span>';
     });
 }
+
+function CopyToClipboard(containerid) {
+    if (document.selection) {
+        var range = document.body.createTextRange();
+        range.moveToElementText(document.getElementById(containerid));
+        range.select().createTextRange();
+        document.execCommand("copy");
+    } else if (window.getSelection) {
+        var range = document.createRange();
+        range.selectNode(document.getElementById(containerid));
+        window.getSelection().addRange(range);
+        document.execCommand("copy");
+        document.getElementById('text-helper-clipboard').innerHTML = 'JSON has been copied!';
+    }
+}
+
+
+async function appVersion() {
+    const response = await fetch('https://api.github.com/repos/schmelto/LinkFree_generator/releases/latest', {
+        method: 'GET',
+        mode: 'cors'
+    })
+    const data = await response.json()
+    document.getElementById('app-version').innerHTML = data.name
+}
+
+appVersion()
