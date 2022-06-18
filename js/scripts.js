@@ -47,7 +47,6 @@ function generateJson() {
         "type": type,
         "bio": bio,
         "avatar": avatar,
-
     }
 
     if (links.length > 0) {
