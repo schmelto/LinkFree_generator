@@ -209,10 +209,10 @@ $(document).ready(function () {
         var newRow = $("<tr>");
         var cols = "";
         cols += `<td class="col">
-                        <input type="text" name="title" class="form-control" placeholder="Title" />
+                        <input type="text" name="title" class="form-control" placeholder="Title" required/>
                     </td>
                     <td class="col">
-                        <input type="date" name="date" class="form-control" placeholder="" />
+                        <input type="date" name="date" class="form-control" placeholder="" required/>
                     </td>
                     <td class="col">
                         <select class="form-select" name="icon" aria-label="Select Icon" required>
@@ -255,13 +255,13 @@ $(document).ready(function () {
                         </select>
                     </td>
                     <td class="col">
-                        <input type="text" name="color" class="form-control" placeholder="grey" />
+                        <input type="text" name="color" class="form-control" placeholder="grey" required/>
                     </td>
                     <td class="col">
-                        <input type="text" name="description" class="form-control" placeholder="description" />
+                        <input type="text" name="description" class="form-control" placeholder="description" required/>
                     </td>
                     <td class="col">
-                        <input type="text" name="url" class="form-control" placeholder="https://www.github.com/username" />
+                        <input type="text" name="url" class="form-control" placeholder="https://www.github.com/username" required />
                     </td>`;
 
         cols += '<td><button class="btn btn-sm btn-danger ibtnDel">Delete</button></td>';
