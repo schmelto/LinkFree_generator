@@ -1,36 +1,5 @@
-// {
-//     "name": "YOUR NAME",
-//     "type": "personal",
-//     "bio": "Open Source Enthusiast!",
-//     "avatar": "https://github.com/YOUR_GITHUB_USERNAME.png",
-//     "links": [
-//       {
-//         "name": "Follow me on GitHub",
-//         "url": "https://github.com/YOUR_GITHUB_USERNAME",
-//         "icon": "github"
-//       },
-//       {
-//         "name": "Follow me on Twitter",
-//         "url": "https://twitter.com/YOUR_TWITTER_USERNAME",
-//         "icon": "twitter"
-//       }
-//     ],
-//     "milestones": [
-//       {
-//         "title": "Started Freelancing",
-//         "date": "December 2021",
-//         "icon": "dollar",
-//         "color": "grey",
-//         "description": "Started freelancing",
-//         "url": "https://www.eddiejaoude.io/"
-//       }
-//     ]
-//   }
-
-
 let links = [];
 let milestones = [];
-
 
 function generateJson() {
     links = [];
@@ -108,15 +77,6 @@ function getMilestones() {
 
     // loop through the rows
     for (var i = 0; i < tbodyRowCount; i++) {
-
-
-        // "title": "Started Freelancing",
-        //         "date": "December 2021",
-        //         "icon": "dollar",
-        //         "color": "grey",
-        //         "description": "Started freelancing",
-        //         "url": "https://www.eddiejaoude.io/"
-        // get the values in the input fields
         var title = tbody.rows[i].cells[0].getElementsByTagName("input")[0].value;
         var date = tbody.rows[i].cells[1].getElementsByTagName("input")[0].value;
         var icon = tbody.rows[i].cells[2].getElementsByTagName("select")[0].value;
@@ -174,7 +134,6 @@ function CopyToClipboard(containerid) {
     }
 }
 
-
 async function appVersion() {
     const response = await fetch('https://api.github.com/repos/schmelto/LinkFree_generator/releases/latest', {
         method: 'GET',
@@ -185,3 +144,152 @@ async function appVersion() {
 }
 
 appVersion()
+
+
+$(document).ready(function () {
+    var counter = 0;
+
+    $("#addrow").on("click", function () {
+        var newRow = $("<tr>");
+        var cols = `
+        <td>
+            <input type="text" class="form-control" placeholder="name" name="name${counter}" required/>
+        </td>
+        <td>
+            <input type="text" class="form-control" placeholder="url" name="url${counter}" required/>
+        </td>
+        <td>
+            <select class="form-select" name="icon${counter}" aria-label="Select Icon" required>
+                <option value="" selected>-- Select Icon --</option>
+                <option value="Android">Android</option>
+                <option value="Apple">Apple</option>
+                <option value="Book">Book</option>
+                <option value="Codeforces">Codeforces</option>
+                <option value="Codewars">Codewars</option>
+                <option value="DEV.to">DEV.to</option>
+                <option value="Discord">Discord</option>
+                <option value="Dollar">Dollar</option>
+                <option value="Envelope">Envelope</option>
+                <option value="Facebook">Facebook</option>
+                <option value="GitHub">GitHub</option>
+                <option value="GitLab">GitLab</option>
+                <option value="Globe">Globe</option>
+                <option value="Graduation Hat">Graduation Hat</option>
+                <option value="Hashnode">Hashnode</option>
+                <option value="Instagram">Instagram</option>
+                <option value="Laravel">Laravel</option>
+                <option value="Left Arrow">Left Arrow</option>
+                <option value="Link">Link</option>
+                <option value="Linkedin">Linkedin</option>
+                <option value="Medium">Medium</option>
+                <option value="Microsoft">Microsoft</option>
+                <option value="NodeJs">NodeJs</option>
+                <option value="PayPal">PayPal</option>
+                <option value="Polywork">Polywork</option>
+                <option value="Search">Search</option>
+                <option value="Send">Send</option>
+                <option value="Slack">Slack</option>
+                <option value="Snapchat">Snapchat</option>
+                <option value="Telegram">Telegram</option>
+                <option value="TikTok">TikTok</option>
+                <option value="Twitch">Twitch</option>
+                <option value="Twitter">Twitter</option>
+                <option value="Vimeo">Vimeo</option>
+                <option value="YouTube">YouTube</option>
+            </select>
+        </td>
+        <td><button class="btn btn-sm btn-danger ibtnDel">Delete</button></td>
+        `;
+        newRow.append(cols);
+        $("table.order-list").append(newRow);
+        counter++;
+    });
+
+    $("#addrowmilestone").on("click", function () {
+        var newRow = $("<tr>");
+        var cols = "";
+        cols += `<td class="col">
+                        <input type="text" name="title" class="form-control" placeholder="Title" />
+                    </td>
+                    <td class="col">
+                        <input type="date" name="date" class="form-control" placeholder="" />
+                    </td>
+                    <td class="col">
+                        <select class="form-select" name="icon" aria-label="Select Icon" required>
+                            <option value="" selected>-- Select Icon --</option>
+                            <option value="Android">Android</option>
+                            <option value="Apple">Apple</option>
+                            <option value="Book">Book</option>
+                            <option value="Codeforces">Codeforces</option>
+                            <option value="Codewars">Codewars</option>
+                            <option value="DEV.to">DEV.to</option>
+                            <option value="Discord">Discord</option>
+                            <option value="Dollar">Dollar</option>
+                            <option value="Envelope">Envelope</option>
+                            <option value="Facebook">Facebook</option>
+                            <option value="GitHub">GitHub</option>
+                            <option value="GitLab">GitLab</option>
+                            <option value="Globe">Globe</option>
+                            <option value="Graduation Hat">Graduation Hat</option>
+                            <option value="Hashnode">Hashnode</option>
+                            <option value="Instagram">Instagram</option>
+                            <option value="Laravel">Laravel</option>
+                            <option value="Left Arrow">Left Arrow</option>
+                            <option value="Link">Link</option>
+                            <option value="Linkedin">Linkedin</option>
+                            <option value="Medium">Medium</option>
+                            <option value="Microsoft">Microsoft</option>
+                            <option value="NodeJs">NodeJs</option>
+                            <option value="PayPal">PayPal</option>
+                            <option value="Polywork">Polywork</option>
+                            <option value="Search">Search</option>
+                            <option value="Send">Send</option>
+                            <option value="Slack">Slack</option>
+                            <option value="Snapchat">Snapchat</option>
+                            <option value="Telegram">Telegram</option>
+                            <option value="TikTok">TikTok</option>
+                            <option value="Twitch">Twitch</option>
+                            <option value="Twitter">Twitter</option>
+                            <option value="Vimeo">Vimeo</option>
+                            <option value="YouTube">YouTube</option>
+                        </select>
+                    </td>
+                    <td class="col">
+                        <input type="text" name="color" class="form-control" placeholder="grey" />
+                    </td>
+                    <td class="col">
+                        <input type="text" name="description" class="form-control" placeholder="description" />
+                    </td>
+                    <td class="col">
+                        <input type="text" name="url" class="form-control" placeholder="https://www.github.com/username" />
+                    </td>`;
+
+        cols += '<td><button class="btn btn-sm btn-danger ibtnDel">Delete</button></td>';
+        newRow.append(cols);
+        $("table.order-list2").append(newRow);
+        counter++;
+    });
+
+    $("table.order-list").on("click", ".ibtnDel", function (event) {
+        $(this).closest("tr").remove();
+        counter -= 1
+    });
+
+    $("table.order-list2").on("click", ".ibtnDel", function (event) {
+        $(this).closest("tr").remove();
+        counter -= 1
+    });
+
+    $(document).on('submit', '#form-generator', function (e) {
+        e.preventDefault();
+        var form = $(this);
+        if (!form[0].checkValidity()) {
+            e.preventDefault();
+            e.stopPropagation()
+        } else {
+            generateJson();
+        }
+        form.addClass('was-validated');
+        return false;
+    })
+});

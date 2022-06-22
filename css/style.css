@@ -1,0 +1,40 @@
+pre {
+  outline: 1px solid #ccc;
+  padding: 5px;
+  margin: 5px;
+}
+
+.string {
+  color: green;
+}
+
+.number {
+  color: darkorange;
+}
+
+.boolean {
+  color: blue;
+}
+
+.null {
+  color: magenta;
+}
+
+.key {
+  color: red;
+}
+
+#json-container {
+  position: relative;
+}
+
+#json-container #copyToClipboard {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+}
+
+.ibtnDel {
+  padding: 6px 10px !important;
+  font-size: 16px !important;
+}
