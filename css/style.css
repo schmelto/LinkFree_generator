@@ -1,3 +1,61 @@
+body {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  font-display: swap;
+  
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #ef5350;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+h1 {
+  font-size: 4.5rem;
+}
+
+h2 {
+  font-size: 3.5rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #202124;
+    color: #fff;
+  }
+
+  a {
+    color: #fff;
+  }
+
+  .card {
+    background-color: #303134;
+  }
+
+  td {
+    color: white;
+  }
+
+  .card-text {
+    color: white;
+  }
+
+  #generate_json {
+    background-color: green;
+    color: white;
+  }
+}
+
 pre {
   outline: 1px solid #ccc;
   padding: 5px;

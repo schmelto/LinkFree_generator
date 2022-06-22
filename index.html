@@ -7,16 +7,19 @@
     <title>LinkFree Profile Generator</title>
     <meta name="description" content="LinkFree Profile JSON Generator">
     <meta name="author" content="Tom Schmelzer">
-    <link rel="stylesheet" href="./css/style.css">
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-</head>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
 
 <body>
     <main class="container py-5 w-75 mx-auto">
         <div class="text-center">
             <h1>LinkFree Profile Generator</h1>
-            <small id="app-version" class="badge text-bg-success">app-version</small>
+            <a href="https://github.com/schmelto/LinkFree_generator">
+                <small id="app-version" class="badge text-bg-success">app-version</small>
+            </a>
         </div>
         <hr>
         <form method="post" id="form-generator" class="needs-validation" novalidate>
@@ -101,7 +104,7 @@
             </div>
             <br>
             <div class="d-grid">
-                <button type="submit" class="btn btn-dark">{ Generate JSON }</button>
+                <button type="submit" id="generate_json" class="btn btn-dark">{ Generate JSON }</button>
             </div>
         </form>
         <div id="json-container" class="d-none">
