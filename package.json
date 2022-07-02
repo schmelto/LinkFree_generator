@@ -4,7 +4,8 @@
   "description": "Deployed website can be found [here](https://schmelto.github.io/LinkFree_generator).",
   "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "prettier --write ."
   },
   "repository": {
     "type": "git",
@@ -20,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/schmelto/LinkFree_generator/issues"
   },
-  "homepage": "https://github.com/schmelto/LinkFree_generator#readme"
+  "homepage": "https://github.com/schmelto/LinkFree_generator#readme",
+  "dependencies": {
+    "prettier": "^2.7.1"
+  }
 }
