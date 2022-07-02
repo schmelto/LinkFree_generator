@@ -1,3 +1,24 @@
 {
-  "version": "0.4.0"
+  "version": "0.4.0",
+  "name": "linkfree_generator",
+  "description": "Deployed website can be found [here](https://schmelto.github.io/LinkFree_generator).",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/schmelto/LinkFree_generator.git"
+  },
+  "keywords": [
+    "LinkFree",
+    "Generator;",
+    "EddieHub"
+  ],
+  "author": "schmelto",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/schmelto/LinkFree_generator/issues"
+  },
+  "homepage": "https://github.com/schmelto/LinkFree_generator#readme"
 }
