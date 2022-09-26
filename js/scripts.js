@@ -1,6 +1,18 @@
 let links = [];
 let milestones = [];
 
+// Get the icons
+async function getIcons() {
+  try {
+    const response = await axios.get(
+      `https://raw.githubusercontent.com/EddieHubCommunity/LinkFree/main/src/config/links.json`
+    );
+    icons = Object.keys(response.data.validIcons);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
 function generateJson() {
   links = [];
   milestones = [];
@@ -165,42 +177,8 @@ $(document).ready(function () {
         <td>
             <select class="form-select" name="icon${counter}" aria-label="Select Icon" required>
                 <option value="" selected>-- Select Icon --</option>
-                <option value="Android">Android</option>
-                <option value="Apple">Apple</option>
-                <option value="Book">Book</option>
-                <option value="Codeforces">Codeforces</option>
-                <option value="Codewars">Codewars</option>
-                <option value="DEV.to">DEV.to</option>
-                <option value="Discord">Discord</option>
-                <option value="Dollar">Dollar</option>
-                <option value="Envelope">Envelope</option>
-                <option value="Facebook">Facebook</option>
-                <option value="GitHub">GitHub</option>
-                <option value="GitLab">GitLab</option>
-                <option value="Globe">Globe</option>
-                <option value="Graduation Hat">Graduation Hat</option>
-                <option value="Hashnode">Hashnode</option>
-                <option value="Instagram">Instagram</option>
-                <option value="Laravel">Laravel</option>
-                <option value="Left Arrow">Left Arrow</option>
-                <option value="Link">Link</option>
-                <option value="Linkedin">Linkedin</option>
-                <option value="Medium">Medium</option>
-                <option value="Microsoft">Microsoft</option>
-                <option value="NodeJs">NodeJs</option>
-                <option value="PayPal">PayPal</option>
-                <option value="Polywork">Polywork</option>
-                <option value="Search">Search</option>
-                <option value="Send">Send</option>
-                <option value="Slack">Slack</option>
-                <option value="Snapchat">Snapchat</option>
-                <option value="Spotify">Spotify</option>
-                <option value="Telegram">Telegram</option>
-                <option value="TikTok">TikTok</option>
-                <option value="Twitch">Twitch</option>
-                <option value="Twitter">Twitter</option>
-                <option value="Vimeo">Vimeo</option>
-                <option value="YouTube">YouTube</option>
+                <! Loop through the icons array and create an option for each icon using getIcons() !>
+                ${getIcons()}
             </select>
         </td>
         <td><button class="btn btn-sm btn-danger ibtnDel">Delete</button></td>
@@ -222,41 +200,8 @@ $(document).ready(function () {
                     <td class="col">
                         <select class="form-select" name="icon" aria-label="Select Icon" required>
                             <option value="" selected>-- Select Icon --</option>
-                            <option value="Android">Android</option>
-                            <option value="Apple">Apple</option>
-                            <option value="Book">Book</option>
-                            <option value="Codeforces">Codeforces</option>
-                            <option value="Codewars">Codewars</option>
-                            <option value="DEV.to">DEV.to</option>
-                            <option value="Discord">Discord</option>
-                            <option value="Dollar">Dollar</option>
-                            <option value="Envelope">Envelope</option>
-                            <option value="Facebook">Facebook</option>
-                            <option value="GitHub">GitHub</option>
-                            <option value="GitLab">GitLab</option>
-                            <option value="Globe">Globe</option>
-                            <option value="Graduation Hat">Graduation Hat</option>
-                            <option value="Hashnode">Hashnode</option>
-                            <option value="Instagram">Instagram</option>
-                            <option value="Laravel">Laravel</option>
-                            <option value="Left Arrow">Left Arrow</option>
-                            <option value="Link">Link</option>
-                            <option value="Linkedin">Linkedin</option>
-                            <option value="Medium">Medium</option>
-                            <option value="Microsoft">Microsoft</option>
-                            <option value="NodeJs">NodeJs</option>
-                            <option value="PayPal">PayPal</option>
-                            <option value="Polywork">Polywork</option>
-                            <option value="Search">Search</option>
-                            <option value="Send">Send</option>
-                            <option value="Slack">Slack</option>
-                            <option value="Snapchat">Snapchat</option>
-                            <option value="Telegram">Telegram</option>
-                            <option value="TikTok">TikTok</option>
-                            <option value="Twitch">Twitch</option>
-                            <option value="Twitter">Twitter</option>
-                            <option value="Vimeo">Vimeo</option>
-                            <option value="YouTube">YouTube</option>
+                            <! Loop through the icons array and create an option for each icon using getIcons() !>
+                ${getIcons()}
                         </select>
                     </td>
                     <td class="col">
