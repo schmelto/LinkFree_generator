@@ -194,6 +194,7 @@ $(document).ready(function () {
                 <option value="Send">Send</option>
                 <option value="Slack">Slack</option>
                 <option value="Snapchat">Snapchat</option>
+                <option value="Spotify">Spotify</option>
                 <option value="Telegram">Telegram</option>
                 <option value="TikTok">TikTok</option>
                 <option value="Twitch">Twitch</option>
