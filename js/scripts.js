@@ -204,8 +204,7 @@ $(document).ready(function () {
                     <td class="col">
                         <select class="form-select" name="icon" aria-label="Select Icon" required>
                             <option value="" selected>-- Select Icon --</option>
-                            <! Loop through the icons array and create an option for each icon using getIcons() !>
-                            
+                            ${icons.map((icon) => `<option value="${icon}">${icon}</option>`)}
                         </select>
                     </td>
                     <td class="col">
