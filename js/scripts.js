@@ -1,18 +1,6 @@
 let links = [];
 let milestones = [];
 
-// Get the icons
-async function getIcons() {
-  try {
-    const response = await axios.get(
-      `https://raw.githubusercontent.com/EddieHubCommunity/LinkFree/main/src/config/links.json`
-    );
-    icons = Object.keys(response.data.validIcons);
-  } catch (error) {
-    console.error(error);
-  }
-}
-
 function generateJson() {
   links = [];
   milestones = [];
@@ -162,31 +150,47 @@ async function appVersion() {
 
 appVersion();
 
+let icons = [];
+
+async function geticons() {
+  const response = await fetch(
+    "https://raw.githubusercontent.com/EddieHubCommunity/LinkFree/main/src/config/links.json",
+    {
+      method: "GET",
+      mode: "cors",
+    }
+  );
+  const data = await response.json();
+  icons = Object.keys(data.validIcons);
+}
+
+geticons();
+
 $(document).ready(function () {
   var counter = 0;
 
   $("#addrow").on("click", function () {
-    var newRow = $("<tr>");
-    var cols = `
-        <td>
-            <input type="text" class="form-control" placeholder="name" name="name${counter}" required/>
-        </td>
-        <td>
-            <input type="text" class="form-control" placeholder="url" name="url${counter}" required/>
-        </td>
-        <td>
-            <select class="form-select" name="icon${counter}" aria-label="Select Icon" required>
-                <option value="" selected>-- Select Icon --</option>
-                <! Loop through the icons array and create an option for each icon using getIcons() !>
-                ${getIcons()}
-            </select>
-        </td>
-        <td><button class="btn btn-sm btn-danger ibtnDel">Delete</button></td>
-        `;
-    newRow.append(cols);
-    $("table.order-list").append(newRow);
-    counter++;
-  });
+   
+      var newRow = $("<tr>");
+      var cols = `
+          <td>
+              <input type="text" class="form-control" placeholder="name" name="name${counter}" required/>
+          </td>
+          <td>
+              <input type="text" class="form-control" placeholder="url" name="url${counter}" required/>
+          </td>
+          <td>
+              <select class="form-select" name="icon${counter}" aria-label="Select Icon" required>
+                  <option value="" selected>-- Select Icon --</option>
+                  ${icons.map((icon) => `<option value="${icon}">${icon}</option>`)}
+              </select>
+          </td>
+          <td><button class="btn btn-sm btn-danger ibtnDel">Delete</button></td>
+          `;
+      newRow.append(cols);
+      $("table.order-list").append(newRow);
+      counter++;
+    });
 
   $("#addrowmilestone").on("click", function () {
     var newRow = $("<tr>");
@@ -201,7 +205,7 @@ $(document).ready(function () {
                         <select class="form-select" name="icon" aria-label="Select Icon" required>
                             <option value="" selected>-- Select Icon --</option>
                             <! Loop through the icons array and create an option for each icon using getIcons() !>
-                ${getIcons()}
+                            
                         </select>
                     </td>
                     <td class="col">
