@@ -35,3 +35,5 @@ Want to file a bug, contribute some code, or improve documentation? Excellent! C
 Help us keep this project open and inclusive. Please read and follow our [Code of Conduct](./CODE_OF_CONDUCT.md).
 
 ### Love this project? Consider giving it a ⭐
+
+P.S. Icon used in Open Graph protocol meta information, i.e. `media/og-icon.png` is the original work of <a href="https://iconscout.com/contributors/first-styles" target="_blank">First Styles</a>.
