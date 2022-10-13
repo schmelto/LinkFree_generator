@@ -63,7 +63,10 @@
   text-decoration: underline;
 }
 /* Link focus offset and visualization in sap.ui.table.* tables */
-[data-sap-ui-wc-root].sap-desktop .sapUiSizeCondensed .sapUiTableCell .sapMLnk:focus:not(.sapMLnkDsbl) {
+[data-sap-ui-wc-root].sap-desktop
+  .sapUiSizeCondensed
+  .sapUiTableCell
+  .sapMLnk:focus:not(.sapMLnkDsbl) {
   outline-offset: -2px;
 }
 .sapUiAnalyticalTable .sapUiAnalyticalTableSum .sapUiTableCell .sapMLnk {
@@ -71,13 +74,17 @@
 }
 /* IE and Edge ignores outline-offset. Use an overlay: */
 /* TODO remove after 1.62 version */
-[data-sap-ui-wc-root][data-sap-ui-browser^="ie"].sap-desktop .sapMLnk:focus:not(.sapMLnkDsbl),
-[data-sap-ui-wc-root][data-sap-ui-browser^="ed"].sap-desktop .sapMLnk:focus:not(.sapMLnkDsbl) {
+[data-sap-ui-wc-root][data-sap-ui-browser^="ie"].sap-desktop
+  .sapMLnk:focus:not(.sapMLnkDsbl),
+[data-sap-ui-wc-root][data-sap-ui-browser^="ed"].sap-desktop
+  .sapMLnk:focus:not(.sapMLnkDsbl) {
   outline: none;
   position: relative;
 }
-[data-sap-ui-wc-root][data-sap-ui-browser^="ie"].sap-desktop .sapMLnk:focus:not(.sapMLnkDsbl):before,
-[data-sap-ui-wc-root][data-sap-ui-browser^="ed"].sap-desktop .sapMLnk:focus:not(.sapMLnkDsbl):before {
+[data-sap-ui-wc-root][data-sap-ui-browser^="ie"].sap-desktop
+  .sapMLnk:focus:not(.sapMLnkDsbl):before,
+[data-sap-ui-wc-root][data-sap-ui-browser^="ed"].sap-desktop
+  .sapMLnk:focus:not(.sapMLnkDsbl):before {
   content: " ";
   box-sizing: border-box;
   width: 100%;

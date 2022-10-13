@@ -45,8 +45,10 @@
   text-align: left;
   text-align: start;
 }
-[data-sap-ui-wc-root][dir=rtl][data-sap-ui-browser^="ie"] .sapMTitleAlignBegin,
-[data-sap-ui-wc-root][dir=rtl][data-sap-ui-browser^="ed"] .sapMTitleAlignBegin {
+[data-sap-ui-wc-root][dir="rtl"][data-sap-ui-browser^="ie"]
+  .sapMTitleAlignBegin,
+[data-sap-ui-wc-root][dir="rtl"][data-sap-ui-browser^="ed"]
+  .sapMTitleAlignBegin {
   text-align: right;
 }
 .sapMTitleAlignLeft {
@@ -56,8 +58,8 @@
   text-align: right;
   text-align: end;
 }
-[data-sap-ui-wc-root][dir=rtl][data-sap-ui-browser^="ie"] .sapMTitleAlignEnd,
-[data-sap-ui-wc-root][dir=rtl][data-sap-ui-browser^="ed"] .sapMTitleAlignEnd {
+[data-sap-ui-wc-root][dir="rtl"][data-sap-ui-browser^="ie"] .sapMTitleAlignEnd,
+[data-sap-ui-wc-root][dir="rtl"][data-sap-ui-browser^="ed"] .sapMTitleAlignEnd {
   text-align: left;
 }
 .sapMTitleAlignRight {

@@ -1,40 +1,40 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA  } from '@angular/core';
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
 
-import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { UserInputComponent } from './user-input/user-input.component';
-import { ListComponent } from './list/list.component';
+import { AppComponent } from "./app.component";
+import { HeaderComponent } from "./header/header.component";
+import { UserInputComponent } from "./user-input/user-input.component";
+import { ListComponent } from "./list/list.component";
 
 // UI5 Web Components used
-import {setTheme } from '@ui5/webcomponents-base/dist/config/Theme';
-import '@ui5/webcomponents-base/dist/features/F6Navigation';
-import '@ui5/webcomponents/dist/Button';
-import '@ui5/webcomponents/dist/Title';
-import '@ui5/webcomponents/dist/Input';
-import '@ui5/webcomponents/dist/DatePicker';
-import '@ui5/webcomponents/dist/List';
-import '@ui5/webcomponents/dist/CustomListItem';
-import '@ui5/webcomponents/dist/Panel';
-import '@ui5/webcomponents/dist/Dialog';
-import '@ui5/webcomponents/dist/Label';
-import '@ui5/webcomponents/dist/Popover';
-import '@ui5/webcomponents/dist/TextArea';
-import '@ui5/webcomponents/dist/StandardListItem';
-import '@ui5/webcomponents/dist/Tab';
-import '@ui5/webcomponents/dist/TabContainer';
-import '@ui5/webcomponents-fiori/dist/ShellBar';
-import '@ui5/webcomponents-fiori/dist/ShellBarItem';
-import '@ui5/webcomponents/dist/Switch';
-import '@ui5/webcomponents-icons/dist/palette.js';
-import '@ui5/webcomponents-fiori/dist/Assets';
-import '@ui5/webcomponents-icons/dist/settings.js';
-import '@ui5/webcomponents-icons/dist/sys-help.js';
-import '@ui5/webcomponents-icons/dist/log.js';
-import '@ui5/webcomponents-icons/dist/account.js';
-import '@ui5/webcomponents-icons/dist/private.js';
-import '@ui5/webcomponents-icons/dist/loan.js';
-import '@ui5/webcomponents-icons/dist/globe.js';
+import { setTheme } from "@ui5/webcomponents-base/dist/config/Theme";
+import "@ui5/webcomponents-base/dist/features/F6Navigation";
+import "@ui5/webcomponents/dist/Button";
+import "@ui5/webcomponents/dist/Title";
+import "@ui5/webcomponents/dist/Input";
+import "@ui5/webcomponents/dist/DatePicker";
+import "@ui5/webcomponents/dist/List";
+import "@ui5/webcomponents/dist/CustomListItem";
+import "@ui5/webcomponents/dist/Panel";
+import "@ui5/webcomponents/dist/Dialog";
+import "@ui5/webcomponents/dist/Label";
+import "@ui5/webcomponents/dist/Popover";
+import "@ui5/webcomponents/dist/TextArea";
+import "@ui5/webcomponents/dist/StandardListItem";
+import "@ui5/webcomponents/dist/Tab";
+import "@ui5/webcomponents/dist/TabContainer";
+import "@ui5/webcomponents-fiori/dist/ShellBar";
+import "@ui5/webcomponents-fiori/dist/ShellBarItem";
+import "@ui5/webcomponents/dist/Switch";
+import "@ui5/webcomponents-icons/dist/palette.js";
+import "@ui5/webcomponents-fiori/dist/Assets";
+import "@ui5/webcomponents-icons/dist/settings.js";
+import "@ui5/webcomponents-icons/dist/sys-help.js";
+import "@ui5/webcomponents-icons/dist/log.js";
+import "@ui5/webcomponents-icons/dist/account.js";
+import "@ui5/webcomponents-icons/dist/private.js";
+import "@ui5/webcomponents-icons/dist/loan.js";
+import "@ui5/webcomponents-icons/dist/globe.js";
 import "@ui5/webcomponents-fiori/dist/Wizard.js";
 import "@ui5/webcomponents/dist/Card";
 import "@ui5/webcomponents/dist/CardHeader.js";
@@ -42,23 +42,19 @@ import "@ui5/webcomponents/dist/SegmentedButton.js";
 import "@ui5/webcomponents/dist/TextArea.js";
 import "@ui5/webcomponents/dist/Input.js";
 
-
-
 import "@ui5/webcomponents-icons/dist/employee.js";
 import "@ui5/webcomponents-icons/dist/factory.js";
-setTheme('sap_fiori_3_dark');
+setTheme("sap_fiori_3_dark");
 @NgModule({
-	declarations: [
-		AppComponent,
-		HeaderComponent,
-		ListComponent,
-		UserInputComponent
-	],
-	schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
-		imports: [
-		BrowserModule
-	],
-	providers: [],
-	bootstrap: [AppComponent]
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    ListComponent,
+    UserInputComponent,
+  ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  imports: [BrowserModule],
+  providers: [],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

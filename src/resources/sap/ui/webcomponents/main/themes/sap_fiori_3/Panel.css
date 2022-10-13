@@ -105,30 +105,46 @@ ui5-panel {
   box-sizing: border-box;
 }
 @media (max-width: 599px) {
-  .sapMSplitContainerHideMode > .sapMSplitContainerDetail .sapMPanel.sapUiResponsiveContentPadding > .sapMPanelContent,
-  .sapMSplitContainerPortrait > .sapMSplitContainerDetail .sapMPanel.sapUiResponsiveContentPadding > .sapMPanelContent,
+  .sapMSplitContainerHideMode
+    > .sapMSplitContainerDetail
+    .sapMPanel.sapUiResponsiveContentPadding
+    > .sapMPanelContent,
+  .sapMSplitContainerPortrait
+    > .sapMSplitContainerDetail
+    .sapMPanel.sapUiResponsiveContentPadding
+    > .sapMPanelContent,
   .sapMPanel.sapUiResponsiveContentPadding > .sapMPanelContent {
     padding: 0;
   }
 }
 @media (min-width: 600px) and (max-width: 1023px) {
-  .sapMSplitContainerHideMode > .sapMSplitContainerDetail .sapMPanel.sapUiResponsiveContentPadding > .sapMPanelContent,
+  .sapMSplitContainerHideMode
+    > .sapMSplitContainerDetail
+    .sapMPanel.sapUiResponsiveContentPadding
+    > .sapMPanelContent,
   .sapMPanel.sapUiResponsiveContentPadding > .sapMPanelContent {
     padding: 1rem;
     box-sizing: border-box;
   }
 }
 @media (min-width: 1024px) {
-  .sapMSplitContainerHideMode > .sapMSplitContainerDetail .sapMPanel.sapUiResponsiveContentPadding > .sapMPanelContent,
+  .sapMSplitContainerHideMode
+    > .sapMSplitContainerDetail
+    .sapMPanel.sapUiResponsiveContentPadding
+    > .sapMPanelContent,
   .sapMPanel.sapUiResponsiveContentPadding > .sapMPanelContent {
     padding: 1rem 2rem;
     box-sizing: border-box;
   }
 }
-.sapMSplitContainerMaster .sapMPanel.sapUiResponsiveContentPadding > .sapMPanelContent {
+.sapMSplitContainerMaster
+  .sapMPanel.sapUiResponsiveContentPadding
+  > .sapMPanelContent {
   padding: 0;
 }
-.sapMSplitContainerDetail .sapMPanel.sapUiResponsiveContentPadding > .sapMPanelContent {
+.sapMSplitContainerDetail
+  .sapMPanel.sapUiResponsiveContentPadding
+  > .sapMPanelContent {
   padding: 1rem;
 }
 .sapMPanel.sapUiNoContentPadding > .sapMPanelContent {

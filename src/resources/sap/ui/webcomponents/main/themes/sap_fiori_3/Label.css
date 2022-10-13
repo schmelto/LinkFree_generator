@@ -60,10 +60,13 @@
 :host(ui5-label.labelInRadioButton) .sapMLabel {
   cursor: default;
 }
-:host(ui5-label.labelInCheckbox) .sapMLabel.sapMLabelMaxWidth.sapMLabelWrapped.sapMLabelWrapped {
+:host(ui5-label.labelInCheckbox)
+  .sapMLabel.sapMLabelMaxWidth.sapMLabelWrapped.sapMLabelWrapped {
   margin: 0.675rem 0;
 }
-:host(ui5-label.labelInCheckbox) .sapUiSizeCompact .sapMLabel.sapMLabelMaxWidth.sapMLabelWrapped.sapMLabelWrapped {
+:host(ui5-label.labelInCheckbox)
+  .sapUiSizeCompact
+  .sapMLabel.sapMLabelMaxWidth.sapMLabelWrapped.sapMLabelWrapped {
   margin: 0.25rem 0;
 }
 /* ============================= */

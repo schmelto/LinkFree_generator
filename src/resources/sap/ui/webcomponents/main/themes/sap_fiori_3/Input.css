@@ -93,8 +93,12 @@
   pointer-events: none;
   z-index: 1;
 }
-[data-sap-ui-wc-root][data-sap-ui-browser^="ie"].sap-desktop .sapMFocus .sapMInputBaseContentWrapper:not(.sapMInputBaseDisabledWrapper)::before,
-[data-sap-ui-wc-root][data-sap-ui-browser^="ed"].sap-desktop .sapMFocus .sapMInputBaseContentWrapper:not(.sapMInputBaseDisabledWrapper)::before {
+[data-sap-ui-wc-root][data-sap-ui-browser^="ie"].sap-desktop
+  .sapMFocus
+  .sapMInputBaseContentWrapper:not(.sapMInputBaseDisabledWrapper)::before,
+[data-sap-ui-wc-root][data-sap-ui-browser^="ed"].sap-desktop
+  .sapMFocus
+  .sapMInputBaseContentWrapper:not(.sapMInputBaseDisabledWrapper)::before {
   content: " ";
   position: absolute;
   top: 1px;
@@ -169,8 +173,12 @@ input.sapMInputBaseInner:invalid {
 .sapMInputBaseInner:not(.sapMInputBaseReadonlyWrapper):not(.sapMInputBaseContentWrapperState):focus {
   border-color: #89919a;
 }
-[data-sap-ui-wc-root][data-sap-ui-browser^="ie"].sap-desktop .sapMFocus .sapMInputBaseContentWrapper:not(.sapMInputBaseDisabledWrapper)::before,
-[data-sap-ui-wc-root][data-sap-ui-browser^="ed"].sap-desktop .sapMFocus .sapMInputBaseContentWrapper:not(.sapMInputBaseDisabledWrapper)::before {
+[data-sap-ui-wc-root][data-sap-ui-browser^="ie"].sap-desktop
+  .sapMFocus
+  .sapMInputBaseContentWrapper:not(.sapMInputBaseDisabledWrapper)::before,
+[data-sap-ui-wc-root][data-sap-ui-browser^="ed"].sap-desktop
+  .sapMFocus
+  .sapMInputBaseContentWrapper:not(.sapMInputBaseDisabledWrapper)::before {
   border: 1px dashed #000;
 }
 .sapMInputBaseContentWrapper:not(.sapMInputBaseReadonlyWrapper):not(.sapMInputBaseContentWrapperState):not(.sapMInputBaseDisabledWrapper):hover {
@@ -212,7 +220,9 @@ input.sapMInputBaseInner:invalid {
   min-width: 2rem;
   line-height: 1.5rem;
 }
-.sapUiSizeCompact .sapMInputBaseContentWrapper.sapMInputBaseContentWrapperState .sapMInputBaseIcon {
+.sapUiSizeCompact
+  .sapMInputBaseContentWrapper.sapMInputBaseContentWrapperState
+  .sapMInputBaseIcon {
   line-height: 1.375rem;
 }
 .sapUiSizeCompact .sapMInputDescriptionWrapper span {
@@ -234,7 +244,9 @@ input.sapMInputBaseInner:invalid {
 .sapUiSizeCondensed .sapUiTableCell .sapMInputBaseHeightMargin {
   margin: 0;
 }
-.sapUiSizeCondensed .sapUiTableCell .sapMInputBaseInner:not(.sapMInputBaseContentWrapperState) {
+.sapUiSizeCondensed
+  .sapUiTableCell
+  .sapMInputBaseInner:not(.sapMInputBaseContentWrapperState) {
   border-color: transparent;
 }
 .sapUiSizeCondensed .sapUiTableCell .sapMInputBaseContentWrapper {
@@ -256,7 +268,8 @@ input.sapMInputBaseInner:invalid {
  * The solution is to use fade with a value for alpha 99 if it's set 100 the browser ignores it.
  */
 [data-sap-ui-wc-root][data-sap-ui-browser^="sf"] .sapMInputBaseInner::selection,
-[data-sap-ui-wc-root][data-sap-ui-browser^="cr"] .sapMInputBaseInner::selection {
+[data-sap-ui-wc-root][data-sap-ui-browser^="cr"]
+  .sapMInputBaseInner::selection {
   background: rgba(10, 110, 209, 0.99);
   color: rgba(255, 255, 255, 0.99);
 }
@@ -272,7 +285,9 @@ input.sapMInputBaseInner:invalid {
 .sapMInputBaseDisabled .sapMInputBaseInner:-ms-input-placeholder {
   color: #fff;
 }
-[data-sap-ui-wc-root][data-sap-ui-browser^="ie"] .sapMFocus .sapMInputBaseDisabledWrapper::before {
+[data-sap-ui-wc-root][data-sap-ui-browser^="ie"]
+  .sapMFocus
+  .sapMInputBaseDisabledWrapper::before {
   display: none;
   pointer-events: none;
 }
@@ -290,13 +305,16 @@ input.sapMInputBaseInner:invalid {
 }
 /* pressed */
 .sapMInputBaseIconPressed .sapMInputBaseIcon,
-[data-sap-ui-wc-root].sap-desktop .sapMInputBaseIconPressed .sapMInputBaseIcon:hover {
+[data-sap-ui-wc-root].sap-desktop
+  .sapMInputBaseIconPressed
+  .sapMInputBaseIcon:hover {
   background: #0854a0;
 }
 .sapMInputBaseIconPressed .sapMInputBaseIcon::before {
   color: #fff;
 }
-.sapMInputBaseIconPressed .sapMInputBaseContentWrapper:not(.sapMInputBaseReadonlyWrapper):not(.sapMInputBaseContentWrapperState):not(.sapMInputBaseDisabledWrapper) {
+.sapMInputBaseIconPressed
+  .sapMInputBaseContentWrapper:not(.sapMInputBaseReadonlyWrapper):not(.sapMInputBaseContentWrapperState):not(.sapMInputBaseDisabledWrapper) {
   border-color: #0854a0;
 }
 /* ============================ */
@@ -386,7 +404,8 @@ input.sapMInputBaseInner:invalid {
 .sapMInputBaseContentWrapper.sapMInputBaseContentWrapperState {
   border-width: 2px;
 }
-.sapMInputBaseContentWrapper.sapMInputBaseContentWrapperState .sapMInputBaseIcon {
+.sapMInputBaseContentWrapper.sapMInputBaseContentWrapperState
+  .sapMInputBaseIcon {
   line-height: 2.25rem;
 }
 .sapMInputBaseIcon {
@@ -424,8 +443,12 @@ input.sapMInputBaseInner:invalid {
 .sapMFocus .sapMInputBaseContentWrapper::before {
   border: 1px dotted #000;
 }
-[data-sap-ui-wc-root][data-sap-ui-browser^="ie"].sap-desktop .sapMFocus .sapMInputBaseContentWrapper:not(.sapMInputBaseDisabledWrapper)::before,
-[data-sap-ui-wc-root][data-sap-ui-browser^="ed"].sap-desktop .sapMFocus .sapMInputBaseContentWrapper:not(.sapMInputBaseDisabledWrapper)::before {
+[data-sap-ui-wc-root][data-sap-ui-browser^="ie"].sap-desktop
+  .sapMFocus
+  .sapMInputBaseContentWrapper:not(.sapMInputBaseDisabledWrapper)::before,
+[data-sap-ui-wc-root][data-sap-ui-browser^="ed"].sap-desktop
+  .sapMFocus
+  .sapMInputBaseContentWrapper:not(.sapMInputBaseDisabledWrapper)::before {
   border: 1px dashed #000;
 }
 /* ============================ */
@@ -434,7 +457,8 @@ input.sapMInputBaseInner:invalid {
 /* ============================ */
 div.sapMInputSuggestionPopup {
   border: none;
-  box-shadow: 0 0.125rem 0.5rem 0 rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0.125rem 0.5rem 0 rgba(0, 0, 0, 0.15),
+    0 0 0 1px rgba(0, 0, 0, 0.15);
 }
 /* ======================================= */
 /* Additional styling for web components   */

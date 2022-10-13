@@ -54,8 +54,10 @@ ui5-icon .sapUiIcon {
 [data-sap-ui-wc-root][data-sap-ui-browser^="ed"] .sapUiIcon:focus {
   outline: none;
 }
-[data-sap-ui-wc-root][data-sap-ui-browser^="ie"] .sapUiIcon[tabindex]:focus::after,
-[data-sap-ui-wc-root][data-sap-ui-browser^="ed"] .sapUiIcon[tabindex]:focus::after {
+[data-sap-ui-wc-root][data-sap-ui-browser^="ie"]
+  .sapUiIcon[tabindex]:focus::after,
+[data-sap-ui-wc-root][data-sap-ui-browser^="ed"]
+  .sapUiIcon[tabindex]:focus::after {
   content: "";
   position: absolute;
   top: 0;
@@ -79,8 +81,10 @@ ui5-icon .sapUiIcon {
  *   in the wrong direction.
  *  3. Custom CSS style should be set on the root DOM and not the pesudo element.
  */
-[data-sap-ui-wc-root][dir=rtl] .sapUiIconMirrorInRTL:not(.sapUiIconSuppressMirrorInRTL)::before,
-[data-sap-ui-wc-root][dir=rtl] .sapUiIconMirrorInRTL:not(.sapUiIconSuppressMirrorInRTL)::after {
+[data-sap-ui-wc-root][dir="rtl"]
+  .sapUiIconMirrorInRTL:not(.sapUiIconSuppressMirrorInRTL)::before,
+[data-sap-ui-wc-root][dir="rtl"]
+  .sapUiIconMirrorInRTL:not(.sapUiIconSuppressMirrorInRTL)::after {
   transform: scale(-1, 1);
   -webkit-transform: scale(-1, 1);
   /* Safari and Chrome */
