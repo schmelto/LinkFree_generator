@@ -41,9 +41,19 @@ import "@ui5/webcomponents/dist/CardHeader.js";
 import "@ui5/webcomponents/dist/SegmentedButton.js";
 import "@ui5/webcomponents/dist/TextArea.js";
 import "@ui5/webcomponents/dist/Input.js";
+import "@ui5/webcomponents/dist/Table.js";
+import "@ui5/webcomponents/dist/TableColumn.js";
+import "@ui5/webcomponents/dist/TableRow.js";
+import "@ui5/webcomponents/dist/TableCell.js";
+import "@ui5/webcomponents/dist/Select";
+import "@ui5/webcomponents/dist/Option";
 
 import "@ui5/webcomponents-icons/dist/employee.js";
 import "@ui5/webcomponents-icons/dist/factory.js";
+import "@ui5/webcomponents-icons/dist/iphone.js";
+import "@ui5/webcomponents-icons/dist/ipad.js";
+import "@ui5/webcomponents-icons/dist/laptop.js";
+
 setTheme("sap_fiori_3_dark");
 @NgModule({
   declarations: [
