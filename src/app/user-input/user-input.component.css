@@ -1,0 +1,35 @@
+.create-todo-wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 2rem 1rem;
+	margin: 2rem 0;
+	box-sizing: border-box;
+	background-color: var(--sapObjectHeader_Background);
+}
+
+.add-todo-element-width {
+	width: auto;
+}
+
+#add-input {
+	flex: auto;
+}
+
+#date-picker {
+	margin: 0 0.5rem 0 0.5rem;
+}
+
+@media(max-width: 600px) {
+	.create-todo-wrapper {
+		flex-direction: column;
+	}
+
+	.add-todo-element-width  {
+		width: 100%;
+	}
+
+	#date-picker {
+		margin: 0.5rem 0 0.5rem 0;
+	}
+}
