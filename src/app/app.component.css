@@ -1,0 +1,79 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  background: var(--sapBackgroundColor);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+}
+
+.app-content {
+  height: 100%;
+  padding: 0 1rem;
+}
+
+.list-todos-wrapper {
+  margin: 2rem 0;
+}
+
+.list-todos-panel {
+  margin: 2rem 0;
+}
+
+.dialog-content {
+  max-width: 320px;
+  padding: 2rem;
+}
+
+.title-textarea {
+  height: 100px;
+  display: inline-block;
+  width: 100%;
+}
+
+.date-edit-fields {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+
+.dialog-footer {
+  padding: 0.25rem 0.25rem 0 0.25rem;
+  border-top: 1px solid #d9d9d9;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.dialog-footer-btn--cancel {
+  margin-inline-end: 0.25rem;
+}
+
+.card-content {
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 1rem;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-item {
+  width: 100%;
+  padding-bottom: 1rem;
+}
+
+/* Responsive layout - makes a one column layout instead of a two-column layout */
+@media (max-width: 800px) {
+  .flex-container {
+    flex-direction: column;
+  }
+}
+
+.card {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}

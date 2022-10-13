@@ -1,39 +1,117 @@
-# LinkFree Profile Generator
+![UI5 logo](/docs/images/UI5_logo_wide.png)
+[![CI](https://github.com/SAP-samples/ui5-webcomponents-sample-angular/actions/workflows/ci.yaml/badge.svg)](https://github.com/SAP-samples/ui5-webcomponents-sample-angular/actions/workflows/ci.yaml)
+[![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/ui5-webcomponents-sample-angular)](https://api.reuse.software/info/github.com/SAP-samples/ui5-webcomponents-sample-angular)
 
-Deployed website can be found [here](https://schmelto.github.io/LinkFree_generator).
+# UI5 Web Components Angular Sample Application
 
-Tools that allow you to generate Profile JSON schema for LinkFree.
+[Angular](https://angular.io/) sample application to demonstrate the usage of the [UI5 Web Components](https://github.com/SAP/ui5-webcomponents). It shows how to bind properties, to subscribe to events, using nested components and the bootstrapped Angular build.
 
-![Usage](https://user-images.githubusercontent.com/32319439/172676192-5970fae4-d95f-443e-9255-a58355313d96.png)
+This project was bootstrapped with [Angular CLI](https://cli.angular.io/).
 
 ## Prerequisites
 
-- [Git](https://git-scm.com/)
-- [Node.js](https://nodejs.org/)
-- [Npm](https://www.npmjs.com/)
+- [Node.js](https://nodejs.org/) (**version 8.5 or higher** ⚠️)
 
-## Local Development
+## Getting started
 
-```shell
-$ npm install
+1. [Clone this repository](https://help.github.com/articles/cloning-a-repository/) using the [GitHub Command line tool](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and navigate into the downloaded directory.
+   ```sh
+   git clone https://github.com/SAP-samples/ui5-webcomponents-sample-angular.git
+   cd ui5-webcomponents-sample-angular
+   ```
+1. Install all dependencies
+
+   ```sh
+   npm install
+   ```
+
+1. Start a local server and run the application. (The running application can be found here: http://localhost:4200)
+   ```sh
+   npm start
+   ```
+
+## Browser support
+
+Currently Chrome, Safari, Edge and Firefox support Web Components natively.
+
+## Noteworthy
+
+### Consume UI5 Web Components
+
+Import the desired component(s) in your app to define the UI5 Web Component.
+
+For example, to use `ui5-button` you need to import it:
+
+```js
+import "@ui5/webcomponents/dist/Button"; // loads ui5-button
 ```
 
-Run in local server or by opening the `index.html`-file.
+Then, you can use the custom element in an HTML page:
 
-Before committing please make sure to format the code with `prettier --write .` or `npm run format`.
+```html
+<ui5-button>Hello world!</ui5-button>
+```
 
-## Contribute
+### Configure events
 
-If you want to contribute to this project and make it better, your help is very welcome.
+A custom configuration for UI5 Web Components should be provided in the html:
 
-### Want to Help?
+```html
+<script data-id="sap-ui-config" type="application/json">
+  {
+    "xx-wc-no-conflict": {
+      "events": "press"
+    }
+  }
+</script>
+```
 
-Want to file a bug, contribute some code, or improve documentation? Excellent! Check out one of our [issues](https://github.com/schmelto/Linkfree_generator/issues).
+Than press event for `ui5-button`, `ui5-togglebutton`, `ui5-icon` and `ui5-link` should be attached with `(ui5-click)` instead of `(click)`
 
-### Code of Conduct
+### Configure Angular Build
 
-Help us keep this project open and inclusive. Please read and follow our [Code of Conduct](./CODE_OF_CONDUCT.md).
+When UI5 Web Components are used they include all of their translation files and CLDR data files in the application bundle.
+In order to decrease the bundle size of the application a custom Webpack configuration should be provided.
 
-### Love this project? Consider giving it a ⭐
+You can follow the steps described by [this article](https://github.com/manfredsteyer/ngx-build-plus#getting-started).
 
-P.S. Icon used in Open Graph protocol meta information, i.e. `media/og-icon.png` is the original work of <a href="https://iconscout.com/contributors/first-styles" target="_blank">First Styles</a>.
+The content of the `webpack.partial.js` file should be:
+
+**webpack.partial.js**
+
+```js
+module.exports = {
+  module: {
+    rules: [
+      {
+        test: [/cldr\/.*\.json$/, /i18n\/.*\.json$/],
+        loader: "file-loader",
+        options: {
+          name: "static/media/[name].[hash:8].[ext]",
+        },
+        type: "javascript/auto",
+      },
+    ],
+  },
+};
+```
+
+### Where is the npm package?
+
+- [UI5 Web Components](https://www.npmjs.com/package/@ui5/webcomponents)
+
+## Limitations
+
+No limitations known.
+
+## Known Issues
+
+No major bugs known.
+
+## Support
+
+We welcome all comments, suggestions, questions, and bug reports. Please follow our [Support Guidelines](https://github.com/SAP/ui5-webcomponents/blob/master/SUPPORT.md#-content) on how to report an issue, or chat with us in the `#webcomponents` channel of the [OpenUI5 Community Slack](https://ui5-slack-invite.cfapps.eu10.hana.ondemand.com/).
+
+## Contribute to UI5 Web Components
+
+Please check our [Contribution Guidelines](https://github.com/SAP/ui5-webcomponents/blob/master/CONTRIBUTING.md).

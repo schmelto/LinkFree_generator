@@ -1,0 +1,82 @@
+<app-header></app-header>
+<section class="app-content">
+  <ui5-wizard id="wiz">
+    <ui5-wizard-step icon="employee" title-text="General information" selected>
+      <ui5-title>General information</ui5-title>
+
+      <ui5-card class="card">
+        <div class="card-content">
+          <div class="flex-container">
+            <div class="flex-item">
+              <ui5-label class="" for="username" required show-colon
+                >GitHub Username</ui5-label
+              ><br />
+              <ui5-input
+                id="username"
+                placeholder="Enter your GitHub Username"
+                required
+              ></ui5-input>
+            </div>
+            <div class="flex-item">
+              <ui5-label class="" for="type" required show-colon>Type</ui5-label
+              ><br />
+              <ui5-segmented-button id="type">
+                <ui5-segmented-button-item icon="employee" pressed
+                  >Personal</ui5-segmented-button-item
+                >
+                <ui5-segmented-button-item icon="factory"
+                  >Community</ui5-segmented-button-item
+                >
+              </ui5-segmented-button>
+            </div>
+          </div>
+
+          <div class="flex-container">
+            <div class="flex-item">
+              <ui5-label class="" for="name" required show-colon>Name</ui5-label
+              ><br />
+              <ui5-input
+                id="name"
+                placeholder="Enter your name"
+                required
+              ></ui5-input>
+            </div>
+
+            <div class="flex-item">
+              <ui5-label class="" for="surename" required show-colon
+                >Surename</ui5-label
+              ><br />
+              <ui5-input
+                id="surename"
+                placeholder="Enter your surename"
+                required
+              ></ui5-input>
+            </div>
+          </div>
+
+          <div class="flex-container">
+            <div class="flex-item">
+              <ui5-label class="" for="bio" required show-colon>Bio</ui5-label
+              ><br />
+              <ui5-textarea id="bio" placeholder="Bio" required></ui5-textarea>
+            </div>
+          </div>
+        </div>
+      </ui5-card>
+
+      <ui5-button (click)="nextStep()" id="next-button">Next step</ui5-button>
+    </ui5-wizard-step>
+    <ui5-wizard-step icon="employee" title-text="Links" disabled>
+      <ui5-title>Links</ui5-title>
+      <ui5-button (click)="nextStep()" id="next-button">Next step</ui5-button>
+    </ui5-wizard-step>
+    <ui5-wizard-step icon="employee" title-text="Milestones" disabled>
+      <ui5-title>Milestones</ui5-title>
+      <ui5-button (click)="nextStep()" id="next-button">Next step</ui5-button>
+    </ui5-wizard-step>
+    <ui5-wizard-step icon="employee" title-text="JSON" disabled>
+      <ui5-title>JSON</ui5-title>
+      <ui5-button>Download JSON</ui5-button>
+    </ui5-wizard-step>
+  </ui5-wizard>
+</section>
