@@ -1,5 +1,5 @@
 {
-  "version": "0.6.0",
+  "version": "0.6.1",
   "name": "linkfree_generator",
   "description": "Deployed website can be found [here](https://schmelto.github.io/LinkFree_generator).",
   "main": "index.html",
