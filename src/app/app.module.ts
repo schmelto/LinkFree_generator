@@ -47,6 +47,7 @@ import "@ui5/webcomponents/dist/TableRow.js";
 import "@ui5/webcomponents/dist/TableCell.js";
 import "@ui5/webcomponents/dist/Select";
 import "@ui5/webcomponents/dist/Option";
+import "@ui5/webcomponents/dist/Badge";
 
 import "@ui5/webcomponents-icons/dist/employee.js";
 import "@ui5/webcomponents-icons/dist/factory.js";
