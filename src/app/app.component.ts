@@ -14,7 +14,6 @@ import {
   encapsulation: ViewEncapsulation.None,
 })
 export class AppComponent {
-
   nextStep() {
     let wizard = document.querySelector("ui5-wizard");
     let steps = Array.from(wizard.children);
