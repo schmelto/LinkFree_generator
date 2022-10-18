@@ -1,6 +1,6 @@
 <app-header></app-header>
 <section class="app-content">
-  <ui5-wizard id="wiz">
+  <ui5-wizard id="wiz" class="wizard">
     <ui5-wizard-step icon="employee" title-text="General information" selected>
       <ui5-title>General information</ui5-title>
 
@@ -68,6 +68,54 @@
     </ui5-wizard-step>
     <ui5-wizard-step icon="employee" title-text="Links" disabled>
       <ui5-title>Links</ui5-title>
+
+      <ui5-card class="card">
+        <div class="card-content">
+          <div class="flex-container">
+            <div class="flex-item">
+
+      
+      <ui5-table class="demo-table" id="table">
+        <!-- Columns -->
+        <ui5-table-column slot="columns">
+          <span style="line-height: 1.4rem">Name</span>
+        </ui5-table-column>
+    
+      
+        <ui5-table-column slot="columns" min-width="600" popin-text="URL" demand-popin class="table-header-text-alignment">
+          <span style="line-height: 1.4rem">URL</span>
+        </ui5-table-column>
+      
+        <ui5-table-column slot="columns" min-width="600" popin-text="Icon" demand-popin class="table-header-text-alignment">
+          <span style="line-height: 1.4rem">Icon</span>
+        </ui5-table-column>
+      
+        <ui5-table-column slot="columns" class="table-header-text-alignment">
+          <span style="line-height: 1.4rem">Price</span>
+        </ui5-table-column>
+      
+        <ui5-table-row>
+          <ui5-table-cell><ui5-input></ui5-input></ui5-table-cell>
+          <ui5-table-cell>Very Best Screens</ui5-table-cell>
+          <ui5-table-cell><ui5-select class="select">
+            <ui5-option icon="iphone">Phone</ui5-option>
+            <ui5-option icon="ipad">Tablet</ui5-option>
+            <ui5-option icon="laptop" selected>Desktop</ui5-option>
+          </ui5-select></ui5-table-cell>
+          <ui5-table-cell style="text-align: right">956EUR</ui5-table-cell>
+        </ui5-table-row>
+      
+        
+
+      </ui5-table>
+
+            </div>
+          </div>
+        </div>
+      </ui5-card>
+
+
+
       <ui5-button (click)="nextStep()" id="next-button">Next step</ui5-button>
     </ui5-wizard-step>
     <ui5-wizard-step icon="employee" title-text="Milestones" disabled>
@@ -79,4 +127,6 @@
       <ui5-button>Download JSON</ui5-button>
     </ui5-wizard-step>
   </ui5-wizard>
+
+  <ui5-button (click)="generateJson()">Download JSON</ui5-button>
 </section>

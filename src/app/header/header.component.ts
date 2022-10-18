@@ -13,7 +13,9 @@ export class HeaderComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.appVersion();
+  }
 
   handleThemeSettingsToggle(event) {
     this.themeSettingsPopover.nativeElement.showAt(event.detail.targetRef);
@@ -24,36 +26,15 @@ export class HeaderComponent implements OnInit {
     this.themeSettingsPopover.nativeElement.close();
   }
 
-  handleProfileClick(event) {
-    this.profileSettingsPopover.nativeElement.showAt(event.detail.targetRef);
-  }
-
-  handleProfileSettingsSelect(event) {
-    const selectedKey = event.detail.item.getAttribute("data-key");
-    if (selectedKey === "settings") {
-      window["settings-dialog"].show(event.detail.targetRef);
-    } else if (selectedKey === "help") {
-      window["help-dialog"].show(event.detail.targetRef);
-    }
-  }
-
-  handleRtlSwitchChange(event) {
-    document.body.dir = event.target.checked ? "rtl" : "ltr";
-  }
-
-  handleContentDensitySwitchChange(event) {
-    if (event.target.checked) {
-      document.body.classList.add("ui5-content-density-compact");
-    } else {
-      document.body.classList.remove("ui5-content-density-compact");
-    }
-  }
-
-  handleSettingsDialogCloseButtonClick(event) {
-    window["settings-dialog"].close();
-  }
-
-  handleHelpDialogCloseButtonClick(event) {
-    window["help-dialog"].close();
+  async appVersion() {
+    const response = await fetch(
+      "https://api.github.com/repos/schmelto/LinkFree_generator/releases/latest",
+      {
+        method: "GET",
+        mode: "cors",
+      }
+    );
+    const data = await response.json();
+    document.getElementById("appVersion").innerHTML = data.name;
   }
 }
