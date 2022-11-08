@@ -154,14 +154,14 @@ let icons = [];
 
 async function geticons() {
   const response = await fetch(
-    "https://raw.githubusercontent.com/EddieHubCommunity/LinkFree/main/src/config/links.json",
+    "https://raw.githubusercontent.com/EddieHubCommunity/LinkFree/main/config/icons.json",
     {
       method: "GET",
       mode: "cors",
     }
   );
   const data = await response.json();
-  icons = Object.keys(data.validIcons);
+  icons = Object.keys(data);
 }
 
 geticons();
