@@ -13,12 +13,10 @@ function generateJson() {
     document.getElementById("lastname").value;
   let type = document.getElementById("type").value;
   let bio = document.getElementById("bio").value;
-  let avatar = `https://github.com/${username}.png`;
   var json = {
     name: name,
     type: type,
     bio: bio,
-    avatar: avatar,
   };
 
   if (links.length > 0) {
