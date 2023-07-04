@@ -1,3 +1,5 @@
+**This repository is being archived since the functionality it offered is now provided by LinkFree itself.**
+
 # LinkFree Profile Generator
 
 [LinkFree Generator](https://schmelto.github.io/LinkFree_generator)
